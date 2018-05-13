@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>sign-up-email</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,21 +15,21 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-label>Email</ion-label>
-    <ion-input type="email-input" placeholder="Schreibe deine Email hier"></ion-input>
-  </ion-item>
+  <div>
+    <form action="">
+      <p>Email: </p>
+      <input type="value" value="Schreibe deine Email hier">
 
-  <ion-item>
-    <ion-label fixed>Passwort</ion-label>
-    <ion-label color="red" >Passwort vergessen?</ion-label>
-    <ion-input type="passwort-input" placeholder="Schreibe hier dein Passwort" fixed></ion-input>
-  </ion-item>
-
+      <p>Passwort: <a href="">Passwort vergessen?</a></p>
+      <input type="value" value="Schreibe hier dein Passwort">
+    </form>
+  </div>
 </ion-content>
 
-<ion-footer no-shadow>
-  <ion-toolbar position="bottom">
+<button ion-button full>Login</button>
+
+<ion-footer id="footer" no-shadow no-border no-lines >
+  <ion-toolbar id="toolbar" position="bottom">
     <button ion-button full>Login</button>
   </ion-toolbar>
 </ion-footer>
