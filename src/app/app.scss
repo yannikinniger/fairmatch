@@ -14,3 +14,17 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@import "../theme/variables";
+
+body {
+
+  color: map_get($colors, black);
+  font-weight: lighter;
+
+  h1, h2, h3, h4 {
+    font-weight: lighter;
+    color: map_get($colors, black);
+  }
+
+}
