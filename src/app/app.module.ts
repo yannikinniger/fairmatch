@@ -7,12 +7,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {SignUpPage} from "../pages/sign-up/sign-up";
+import {InputBoxComponent} from "../components/input-box/input-box";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SignUpPage,
+    InputBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,9 @@ import {SignUpPage} from "../pages/sign-up/sign-up";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ],
+  exports: [
+    InputBoxComponent,
   ]
 })
 export class AppModule {}
