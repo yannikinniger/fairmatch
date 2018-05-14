@@ -1,4 +1,33 @@
 @import "../../theme/variables";
 page-tournament-overview {
+  p{
+    font-size: 16px;
+    color: map_get($colors, font);
+  }
+  h1{
+    color: map_get($colors, font);
+  }
 
+  #textParagraph {
+    text-align: center;
+  }
+  #pictureSoccer{
+    margin: auto;
+    width: 70%;
+  }
+  #toolbar-buttons{ //arrange pictures in nav
+    display: flex;
+    justify-content:space-between;
+  }
+  #add-button{
+    z-index: 1;
+    margin-top:-5em;
+    height: 30%;
+
+  }
+  #soccer-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

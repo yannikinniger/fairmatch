@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-searchbar>Meine Tourniere</ion-searchbar>
+    <ion-searchbar placeholder="Meine Tourniere"></ion-searchbar>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div id="pictureSoccer">
+    <img id="soccer-img" src="assets/imgs/fair-match.svg"/><!--Pic need to be replaced -->
+  </div>
+  <div id="textParagraph">
+    <h1>Noch keine Tourniere?</h1>
+    <p>Erstelle dein erstes Tournier und lae dazu deine Freunde ein. </p>
+  </div>
 
 </ion-content>
+
+<ion-footer id="footer" >
+  <ion-toolbar id="toolbar" position="bottom">
+    <div id="toolbar-buttons">
+      <button id="tournament-button" (click)="loginWithEmail()"><img src="assets/imgs/fair-match.svg"/><!--Pic need to be replaced --></button>
+      <button id="add-button" (click)="loginWithEmail()"><img src="assets/imgs/fair-match.svg"/><!--Pic need to be replaced --></button>
+      <button id="profile-button" (click)="loginWithEmail()"><img src="assets/imgs/fair-match.svg"/><!--Pic need to be replaced --></button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
