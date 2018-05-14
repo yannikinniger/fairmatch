@@ -11,7 +11,7 @@ export class SignUpPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   singUpWithEmail() {
-    this.navCtrl.push('SignUpEmail');
+    this.navCtrl.push('SignUpEmailPage');
   }
 
 }

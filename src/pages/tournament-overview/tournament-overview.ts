@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SignUpEmailPage page.
+ * Generated class for the TournamentOverviewPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,17 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-sign-up-email',
-  templateUrl: 'sign-up-email.html',
+  selector: 'page-tournament-overview',
+  templateUrl: 'tournament-overview.html',
 })
-export class SignUpEmailPage{
+export class TournamentOverviewPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  loginWithEmail() {
-    this.navCtrl.push('TournamentOverviewPage');
-  }
-
 
 }
