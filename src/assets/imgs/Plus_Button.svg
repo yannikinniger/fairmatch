@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>ADD ICON BOTTOM</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="30" cy="30" r="30"></circle>
+        <filter x="-48.3%" y="-41.7%" width="196.7%" height="196.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="9" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.996078431   0 0 0 0 0.592156863   0 0 0 0 0.611764706  0 0 0 0.344231205 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Add-Button" transform="translate(18.000000, 14.000000)">
+            <g id="ADD-ICON-BOTTOM">
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FE989C" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <polygon id="+" fill="#FFFFFF" points="39.525 31.267 32.153 31.267 32.153 39.095 28.334 39.095 28.334 31.267 21 31.267 21 27.79 28.334 27.79 28.334 20 32.153 20 32.153 27.79 39.525 27.79"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

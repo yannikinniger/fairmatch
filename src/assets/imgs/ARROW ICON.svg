@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>ARROW ICON</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Zurück" transform="translate(1.000000, 1.000000)" fill="#414B6B" stroke="#414B6B">
+            <path d="M12.1209908,0.210550086 C11.8757701,-0.0701833619 11.4676405,-0.0701833619 11.2138457,0.210550086 C10.968625,0.481799295 10.968625,0.933249029 11.2138457,1.20386596 L15.8135916,6.29184356 L0.635058749,6.29184356 C0.281232137,6.29247584 0,6.60355885 0,6.99494174 C0,7.38632463 0.281232137,7.70752416 0.635058749,7.70752416 L15.8135916,7.70752416 L11.2138457,12.7860175 C10.968625,13.066751 10.968625,13.518833 11.2138457,13.7894499 C11.4676405,14.0701834 11.8763417,14.0701834 12.1209908,13.7894499 L17.8096539,7.49697408 C18.0634487,7.22572487 18.0634487,6.77427513 17.8096539,6.50365821 L12.1209908,0.210550086 Z" id="ARROW-ICON" transform="translate(9.000000, 7.000000) rotate(180.000000) translate(-9.000000, -7.000000) "></path>
+        </g>
+    </g>
+</svg>

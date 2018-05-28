@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="23px" viewBox="0 0 19 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Profil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bottom-Bar" transform="translate(-241.000000, -19.000000)" fill="#93A6B9">
+            <g id="BOTTOM-BAR">
+                <g id="PROFILE" transform="translate(241.000000, 19.000000)">
+                    <g id="Icon/Profil">
+                        <g id="ICON">
+                            <path d="M19,23 L0,23 L0,20.4813223 C0,19.1593202 0.615720375,17.9296567 1.64597491,17.1909477 C2.48474676,16.5904015 4.33980007,16.4019976 5.69363449,16.265353 C6.03066992,16.2315369 6.34803955,16.1992391 6.63099405,16.1640427 L6.82804009,16.1393363 C8.3015512,15.9539689 10.6984488,15.9531407 12.1719599,16.1393363 L12.3704291,16.1640427 C12.6526074,16.1993771 12.9693301,16.2316749 13.3070124,16.265353 C14.6609762,16.4026877 16.5159001,16.5904015 17.354672,17.1909477 C18.3841502,17.9296567 19,19.1593202 19,20.4813223 L19,23 Z" id="Shape"></path>
+                            <path d="M9,14 C12.3080554,14 15,10.8594341 15,7 C15,3.14056595 12.3086711,0 9,0 C5.69132889,0 3,3.14001936 3,7 C3,10.8599806 5.69132889,14 9,14 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
