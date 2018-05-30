@@ -13,6 +13,7 @@ import {Component, Input} from '@angular/core';
 export class InputBoxComponent {
 
   @Input() name: string;
+  @Input() placeholder: string;
   text: string;
 
   constructor() {
