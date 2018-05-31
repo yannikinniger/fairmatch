@@ -1,4 +1,4 @@
 <div>
-  <label>{{name}}:</label>
+  <label>{{name}}:</label><ng-content id="link"></ng-content>
   <input type="{{type}}" placeholder="{{placeholder}}" [ngModel]="model" (ngModelChange)="model=$event; modelChange.emit($event);"/>
 </div>
