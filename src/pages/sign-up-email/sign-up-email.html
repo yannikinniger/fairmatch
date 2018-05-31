@@ -1,23 +1,16 @@
-<ion-header>
 
-  <ion-navbar>
-    <ion-title></ion-title>
-  </ion-navbar>
-
-</ion-header>
 <ion-content padding>
   <div>
-    <form>
-      <input-field name="E-Mail" type="text" placeholder="Schreibe deine Email hier" [(model)]="email"></input-field>
-      <input-field name="Password" type="password" placeholder="Schreibe hier dein Passwort" [(model)]="password">
-        <a id="link">Passwort vergessen?</a>
-      </input-field>
-    </form>
+    <input-field name="E-Mail" type="text" placeholder="Schreibe deine Email hier" [(model)]="email"></input-field>
+    <input-field name="Password" type="password" placeholder="Schreibe hier dein Passwort" [(model)]="password">
+      <a id="link">Passwort vergessen?</a>
+    </input-field>
   </div>
 </ion-content>
 
-<ion-footer id="footer" no-shadow no-border no-lines >
+<ion-footer id="footer" no-shadow no-border no-lines>
+  <ion-item id="message"></ion-item>
   <ion-toolbar id="toolbar" position="bottom">
-    <button id="login-button" (click)="loginWithEmail()" ion-button full >Login</button>
+    <button id="sign-up-button" (click)="signUp()" ion-button full>Account erstellen</button>
   </ion-toolbar>
 </ion-footer>
