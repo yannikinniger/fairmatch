@@ -9,6 +9,12 @@ import { HomePage } from '../pages/home/home';
 import {SignUpPage} from "../pages/sign-up/sign-up";
 import {InputBoxComponent} from "../components/input-box/input-box";
 
+import { LoginProvider } from '../providers/login/login';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -18,7 +24,10 @@ import {InputBoxComponent} from "../components/input-box/input-box";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,7 +37,8 @@ import {InputBoxComponent} from "../components/input-box/input-box";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginProvider
   ],
   exports: [
     InputBoxComponent,
