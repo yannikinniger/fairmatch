@@ -1,6 +1,6 @@
 @import "../../theme/variables";
 
-input-box {
+input-field {
 
   input {
     border-radius: 4px;
@@ -15,6 +15,18 @@ input-box {
   label {
     font-size: 16px;
     color: map_get($colors, font);
+    margin: 16px 0;
+    display: inline-block;
   }
 
+  a {
+    position: absolute;
+    right: 0;
+    padding-right: 16px;
+    text-decoration: none;
+  }
+
+  #link {
+    margin-top: 16px;
+  }
 }

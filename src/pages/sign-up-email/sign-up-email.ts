@@ -1,26 +1,31 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SignUpEmailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {LoginProvider} from "../../providers/login/login";
 
 @IonicPage()
 @Component({
   selector: 'page-sign-up-email',
   templateUrl: 'sign-up-email.html',
 })
-export class SignUpEmailPage{
+export class SignUpEmailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  password: string;
+  email: string;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private loginProvider: LoginProvider
+  ) {
   }
 
-  loginWithEmail() {
-    this.navCtrl.push('TournamentOverviewPage');
+  signUp() {
+    this.loginProvider.doRegister(this.email, this.password)
+      .then(res => this.navCtrl.push('TournamentOverviewPage'))
+      .catch(err => {
+        document.getElementById('message').innerText = err.message;
+        console.log(err)
+      });
   }
-
 
 }
