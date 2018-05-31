@@ -1,0 +1,4 @@
+<div>
+  <label>{{name}}:</label>
+  <input type="{{type}}" placeholder="{{placeholder}}" [ngModel]="model" (ngModelChange)="model=$event; modelChange.emit($event);"/>
+</div>

@@ -1,8 +1,15 @@
-import { NgModule } from '@angular/core';
-import { InputBoxComponent } from './input-box/input-box';
+import {NgModule} from '@angular/core';
+import {IonicModule} from "ionic-angular";
+import {InputFieldComponent} from './input-field/input-field';
+
 @NgModule({
-	declarations: [InputBoxComponent],
-	imports: [],
-	exports: [InputBoxComponent]
+  declarations: [
+    InputFieldComponent,
+  ],
+  imports: [IonicModule],
+  exports: [
+    InputFieldComponent,
+  ]
 })
-export class ComponentsModule {}
+export class ComponentsModule {
+}
