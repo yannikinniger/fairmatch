@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <form action="">
+      <div id="description">
+      <h1>Erstelle ein Turnier </h1>
+      <p>Wähle einen Turniername und füge eine Beschreibung für deine Freunde hinzu. </p>
+      </div>
+      <p>Turniername</p>
+      <input type="value" placeholder="Schreibe hier dein Tourniername">
+      <p>Beschreibung</p>
+      <input type="value" placeholder="Hier kommt deine Beschreibung">
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer id="footer" no-shadow no-border no-lines >
+  <ion-toolbar id="toolbar" position="bottom">
+    <button id="next-step-button" (click)="saveTournier()" ion-button full >Nächster Schritt</button>
+  </ion-toolbar>
+</ion-footer>
+

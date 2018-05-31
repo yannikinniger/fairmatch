@@ -4,6 +4,7 @@ page-tournament-overview {
     font-size: 16px;
     color: map_get($colors, font);
   }
+
   h1{
     color: map_get($colors, font);
   }
@@ -11,20 +12,20 @@ page-tournament-overview {
   #textParagraph {
     text-align: center;
   }
-  #pictureSoccer{
-    margin: auto;
-    width: 70%;
+  #text-button-tournament{
+    font-size: 16px;
+    font-weight:normal;
+    margin-left: 3px;
+    color: map_get($colors, black);
   }
-  #toolbar-buttons{ //arrange pictures in nav
-    display: flex;
-    justify-content:space-between;
-  }
-  #add-button{
-    z-index: 1;
-    margin-top:-5em;
-    height: 30%;
 
+  #text-button-profile{
+    font-size: 16px;
+    font-weight:normal;
+    margin-left: 3px;
+    color: map_get($colors, font);
   }
+
   #soccer-img{
     display: block;
     margin-left: auto;

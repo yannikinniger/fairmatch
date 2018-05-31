@@ -13,9 +13,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-tournament-overview',
   templateUrl: 'tournament-overview.html',
 })
+
+
 export class TournamentOverviewPage {
+  private tournaments: 0;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+      createTournament(){
+      this.navCtrl.push('CreateTournamentPage');
+      this.tournaments++;
+    }
+
+    showTournaments(){
+      if (this.tournaments !== 0) {
+        alert("updateOverviewPage");
+      } else {
+        this.navCtrl.push('TournamentOverviewPage');
+      }
   }
 
 }
