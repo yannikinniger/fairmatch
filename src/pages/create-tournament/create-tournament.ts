@@ -3,13 +3,6 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Tournament} from "../../model/tournament";
 import {TournamentProvider} from "../../providers/tournament/tournament";
 
-/**
- * Generated class for the CreateTournamentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-create-tournament',
