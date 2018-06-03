@@ -8,10 +8,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SignUpPage {
 
+  signUp: boolean;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   singUpWithEmail() {
     this.navCtrl.push('SignUpEmailPage');
+  }
+
+  signInWithEmail() {
+    this.navCtrl.push('SignUpEmailPage');
+  }
+
+  changeView() {
+    this.signUp = !this.signUp;
   }
 
 }

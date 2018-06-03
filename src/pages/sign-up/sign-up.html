@@ -5,19 +5,40 @@
     <h3>Bereit für faire Spiele?</h3>
   </div>
   <img id="waves" src="/assets/imgs/waves.png">
-  <div id="sign-up-block">
-    <div class="button-block">
-      <div>
-        <button id="button-primary" (click)="singUpWithEmail()">
-          Mit Email registrieren
-        </button>
+
+  <div *ngIf="signUp; else signIn">
+    <div id="sign-up-block">
+      <div class="button-block">
+        <div>
+          <button class="button-primary" (click)="singUpWithEmail()">
+            Mit Email registrieren
+          </button>
+        </div>
+        <div>
+          <button class="button-secondary">Mit Facebook registrieren</button>
+        </div>
       </div>
       <div>
-        <button id="button-secondary">Mit Facebook registrieren</button>
+        <p>Du hast bereits ein Konto? <a (click)="changeView()">Melde dich jetzt an</a></p>
       </div>
-    </div>
-    <div>
-      <p>Du hast bereits ein Konto? <a>Melde dich jetzt an</a></p>
     </div>
   </div>
+
+  <ng-template #signIn>
+    <div id="sign-in-block">
+      <div class="button-block">
+        <div>
+          <button class="button-primary" (click)="signInWithEmail()">
+            Mit Email anmelden
+          </button>
+        </div>
+        <div>
+          <button class="button-secondary">Mit Facebook anmelden</button>
+        </div>
+      </div>
+      <div>
+        <p>Du hast kein Konto? <a (click)="changeView()">Registriere dich jetzt</a></p>
+      </div>
+    </div>
+  </ng-template>
 </ion-content>

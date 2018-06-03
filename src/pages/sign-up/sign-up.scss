@@ -25,20 +25,19 @@ page-sign-up {
     left: 0;
   }
 
-  #sign-up-block {
+  #sign-up-block, #sign-in-block {
     position: absolute;
     bottom: 2em;
     left: 10%;
     right: 10%;
 
-    #button-primary {
+    .button-primary {
       background-color: white;
       color: map_get($colors, grey);
     }
 
-    #button-secondary {
-      background-color: black;
-      opacity: 0.5;
+    .button-secondary {
+      background-color: rgba(0, 0, 0, 0.2);
       color: white;
     }
   }
