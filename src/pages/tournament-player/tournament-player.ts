@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the CreateTournamentPage page.
+ * Generated class for the TournamentPlayerPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-create-tournament',
-  templateUrl: 'create-tournament.html',
+  selector: 'page-tournament-player',
+  templateUrl: 'tournament-player.html',
 })
-export class CreateTournamentPage {
+export class TournamentPlayerPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  saveTournament(){
-    this.navCtrl.push('TournamentPlayerPage');
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TournamentPlayerPage');
   }
 
 }
