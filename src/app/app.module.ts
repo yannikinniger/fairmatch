@@ -25,7 +25,7 @@ import { TournamentProvider } from '../providers/tournament/tournament';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],

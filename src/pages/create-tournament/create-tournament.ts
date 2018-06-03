@@ -20,20 +20,18 @@ export class CreateTournamentPage {
   tournament: Tournament;
 
   constructor(public navCtrl: NavController,
-              private tournamentProvider: TournamentProvider
+              private tournamentProvider: TournamentProvider,
   ) {
     this.tournament = new Tournament("", "");
   }
 
   saveTournament() {
-    // this.tournamentProvider.createTorunament(this.tournament)
-    //   .then(_ => {
-    //       console.log(this.tournament);
-    //       this.navCtrl.push('TournamentPlayerPage');
-    //     }
-    //   ).catch(err => console.log(err));
-    console.log(this.tournament);
-    this.navCtrl.push('TournamentPlayerPage');
+    this.tournamentProvider.createTournament(this.tournament)
+      .then(_ => {
+          console.log(this.tournament);
+          this.navCtrl.push('TournamentPlayerPage');
+        }
+      ).catch(err => console.log(err));
   }
 
 }

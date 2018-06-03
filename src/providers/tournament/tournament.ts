@@ -1,19 +1,26 @@
 import {Injectable} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreCollection, DocumentReference} from 'angularfire2/firestore';
 import {Tournament} from "../../model/tournament";
 
 @Injectable()
 export class TournamentProvider {
 
-  tournaments: AngularFirestoreCollection;
+  tournaments: AngularFirestoreCollection<Tournament>;
 
   constructor(private db: AngularFirestore) {
-    this.tournaments = this.db.collection<Tournament>('/tournaments')
+    this.tournaments = this.db.collection<Tournament>('tournaments')
   }
 
-  createTorunament(tournament: Tournament): Promise<any> {
-    return this.tournaments.doc<Tournament>(`/${this.db.createId()}`)
-      .set(tournament)
+  createTournament(tournament: Tournament): Promise<DocumentReference> {
+    tournament.id = this.db.createId();
+    console.log(tournament);
+    const tournamentObject = JSON.parse(JSON.stringify(tournament));
+    return new Promise<DocumentReference>((resolve, reject) => {
+      this.tournaments.add(tournamentObject)
+        .then(res => {
+          resolve(res);
+        }, err => reject(err))
+    });
   }
 
 }
