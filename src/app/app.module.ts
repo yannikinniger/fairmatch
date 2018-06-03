@@ -13,6 +13,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {environment} from '../environments/environment';
+import { TournamentProvider } from '../providers/tournament/tournament';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {environment} from '../environments/environment';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginProvider
+    LoginProvider,
+    TournamentProvider
   ],
   exports: []
 })
