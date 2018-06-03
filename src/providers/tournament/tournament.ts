@@ -1,16 +1,7 @@
-import { Injectable } from '@angular/core';
-import { AngularFireModule } from 'angularfire2';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreModule} from 'angularfire2/firestore';
-import {AngularFirestoreDocument} from "angularfire2/firestore/document/document";
+import {Injectable} from '@angular/core';
+import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import {Tournament} from "../../model/tournament";
 
-
-/*
-  Generated class for the TournamentProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class TournamentProvider {
 
