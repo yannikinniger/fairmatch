@@ -32,20 +32,26 @@ export class SignUpEmailPage {
   }
 
   signUp() {
+    const errorOutput = document.getElementById('message');
     this.loginProvider.doRegister(this.email, this.password)
-      .then(res => this.navCtrl.push('TournamentOverviewPage'))
+      .then(res => {
+        errorOutput.innerText = "";
+        this.navCtrl.push('TournamentOverviewPage');
+      })
       .catch(err => {
         document.getElementById('message').innerText = err.message;
-        console.log(err)
       });
   }
 
   signIn() {
+    const errorOutput = document.getElementById('message');
     this.loginProvider.doLogin(this.email, this.password)
-      .then(res => this.navCtrl.push('TournamentOverviewPage'))
+      .then(res => {
+        errorOutput.innerText = "";
+        this.navCtrl.push('TournamentOverviewPage');
+      })
       .catch(err => {
         document.getElementById('message').innerText = err.message;
-        console.log(err)
       });
   }
 
