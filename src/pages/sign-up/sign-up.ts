@@ -10,14 +10,10 @@ export class SignUpPage {
 
   signUp: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController) {}
 
-  singUpWithEmail() {
-    this.navCtrl.push('SignUpEmailPage');
-  }
-
-  signInWithEmail() {
-    this.navCtrl.push('SignUpEmailPage');
+  handleProceed() {
+    this.navCtrl.push('SignUpEmailPage', {signUp: this.signUp});
   }
 
   changeView() {

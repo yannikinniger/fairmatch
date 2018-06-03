@@ -1,16 +1,15 @@
-
 <ion-content padding>
-  <div>
-    <input-field name="E-Mail" type="text" placeholder="Schreibe deine Email hier" [(model)]="email"></input-field>
-    <input-field name="Password" type="password" placeholder="Schreibe hier dein Passwort" [(model)]="password">
+  <input-field name="E-Mail" type="text" placeholder="Schreibe deine Email hier" [(model)]="email"></input-field>
+  <input-field name="Password" type="password" placeholder="Schreibe hier dein Passwort" [(model)]="password">
+    <span *ngIf="!doSignUp">
       <a id="link">Passwort vergessen?</a>
-    </input-field>
-  </div>
+    </span>
+  </input-field>
 </ion-content>
 
 <ion-footer id="footer" no-shadow no-border no-lines>
   <ion-item id="message"></ion-item>
   <ion-toolbar id="toolbar" position="bottom">
-    <button id="sign-up-button" (click)="signUp()" ion-button full>Account erstellen</button>
+    <button id="sign-up-button" (click)="handleSubmit()" ion-button full>{{buttonText}}</button>
   </ion-toolbar>
 </ion-footer>
