@@ -13,7 +13,6 @@ export class TournamentProvider {
 
   createTournament(tournament: Tournament): Promise<DocumentReference> {
     tournament.id = this.db.createId();
-    console.log(tournament);
     const tournamentObject = JSON.parse(JSON.stringify(tournament));
     return new Promise<DocumentReference>((resolve, reject) => {
       this.tournaments.add(tournamentObject)

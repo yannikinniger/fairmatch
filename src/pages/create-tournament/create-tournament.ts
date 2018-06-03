@@ -12,19 +12,12 @@ export class CreateTournamentPage {
 
   tournament: Tournament;
 
-  constructor(public navCtrl: NavController,
-              private tournamentProvider: TournamentProvider,
-  ) {
+  constructor(public navCtrl: NavController) {
     this.tournament = new Tournament("", "");
   }
 
   saveTournament() {
-    this.tournamentProvider.createTournament(this.tournament)
-      .then(_ => {
-          console.log(this.tournament);
-          this.navCtrl.push('TournamentPlayerPage');
-        }
-      ).catch(err => console.log(err));
+    this.navCtrl.push('TournamentPlayerPage', {tournament: this.tournament});
   }
 
 }
