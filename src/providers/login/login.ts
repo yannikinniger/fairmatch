@@ -33,4 +33,13 @@ export class LoginProvider {
     })
   }
 
+  passwordReset(email) {
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().sendPasswordResetEmail(email)
+        .then(res => {
+          resolve(res);
+        }, err => reject(err))
+    })
+  }
+
 }
