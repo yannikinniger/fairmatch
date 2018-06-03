@@ -1,18 +1,12 @@
 import {Injectable} from '@angular/core';
 import * as firebase from 'firebase/app';
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class LoginProvider {
 
   constructor() {
-    firebase.initializeApp({
-      apiKey: "AIzaSyCBcAtZ7TKZ43f01qE2CRpzxNuTSl9dZLs",
-      authDomain: "fairmatch-781e7.firebaseapp.com",
-      databaseURL: "https://fairmatch-781e7.firebaseio.com",
-      projectId: "fairmatch-781e7",
-      storageBucket: "fairmatch-781e7.appspot.com",
-      messagingSenderId: "958988116522",
-    })
+    firebase.initializeApp(environment.firebase)
   }
 
   doRegister(email, password) {
