@@ -7,9 +7,6 @@
   </input-field>
 </ion-content>
 
-<ion-footer id="footer" no-shadow no-border no-lines>
+<bottom-button (click)="handleSubmit()"  text="{{buttonText}}">
   <ion-item no-lines id="message"></ion-item>
-  <ion-toolbar id="toolbar" position="bottom">
-    <button id="sign-up-button" (click)="handleSubmit()" ion-button full>{{buttonText}}</button>
-  </ion-toolbar>
-</ion-footer>
+</bottom-button>
