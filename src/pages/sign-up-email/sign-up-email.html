@@ -1,8 +1,12 @@
 <ion-content padding>
+  <div id="passwordReset" #passwordReset>
+    <input-field name="E-Mail" type="text" [(model)]="email"></input-field>
+    <button id="password-reset-button">Passwort zurücksetzen</button>
+  </div>
   <input-field name="E-Mail" type="text" placeholder="Schreibe deine Email hier" [(model)]="email"></input-field>
   <input-field name="Password" type="password" placeholder="Schreibe hier dein Passwort" [(model)]="password">
     <span *ngIf="!doSignUp">
-      <a id="link">Passwort vergessen?</a>
+      <a id="link" (click)="showPasswordReset()">Passwort vergessen?</a>
     </span>
   </input-field>
 </ion-content>

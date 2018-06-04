@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {LoginProvider} from "../../providers/login/login";
 
@@ -8,6 +8,8 @@ import {LoginProvider} from "../../providers/login/login";
   templateUrl: 'sign-up-email.html',
 })
 export class SignUpEmailPage {
+
+  @ViewChild('passwordReset') passwordResetOverlay: ElementRef;
 
   password: string;
   email: string;
@@ -34,7 +36,7 @@ export class SignUpEmailPage {
   signUp() {
     const errorOutput = document.getElementById('message');
     this.loginProvider.doRegister(this.email, this.password)
-      .then(res => {
+      .then(_ => {
         errorOutput.innerText = "";
         this.navCtrl.push('TournamentOverviewPage');
       })
@@ -46,13 +48,22 @@ export class SignUpEmailPage {
   signIn() {
     const errorOutput = document.getElementById('message');
     this.loginProvider.doLogin(this.email, this.password)
-      .then(res => {
+      .then(_ => {
         errorOutput.innerText = "";
         this.navCtrl.push('TournamentOverviewPage');
       })
       .catch(err => {
         document.getElementById('message').innerText = err.message;
       });
+  }
+
+  showPasswordReset() {
+    this.passwordResetOverlay.nativeElement.display = 'block';
+    console.log(this.passwordResetOverlay.nativeElement.style);
+  }
+
+  triggerPasswordReset() {
+    this.loginProvider.passwordReset(this.email).then()
   }
 
 }
