@@ -7,18 +7,14 @@
 
 
 <ion-content padding>
-  <div>
-    <form action="">
-      <div id="description">
-        <h1>Erstelle ein Turnier </h1>
-        <p>Wähle einen Turniername und füge eine Beschreibung für deine Freunde hinzu. </p>
-      </div>
-      <input-field name="Turniername" placeholder="Schreibe hier dein Tourniername"
-                   [(model)]="tournament.name"></input-field>
-      <input-field name="Turniername" placeholder="Schreibe hier dein Tourniername"
-                   [(model)]="tournament.description"></input-field>
-    </form>
-  </div>
+    <div id="description">
+      <h1>Erstelle ein Turnier </h1>
+      <p>Wähle einen Turniername und füge eine Beschreibung für deine Freunde hinzu. </p>
+    </div>
+    <input-field name="Turniername" placeholder="Schreibe hier dein Tourniername"
+                 [(model)]="tournament.name"></input-field>
+    <input-field name="Turniername" placeholder="Schreibe hier dein Tourniername"
+                 [(model)]="tournament.description"></input-field>
 </ion-content>
 
 <ion-footer id="footer" no-shadow no-border no-lines>
