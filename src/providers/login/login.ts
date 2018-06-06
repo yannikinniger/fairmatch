@@ -6,7 +6,11 @@ import {environment} from "../../environments/environment";
 export class LoginProvider {
 
   constructor() {
-    firebase.initializeApp(environment.firebase)
+    firebase.initializeApp(environment.firebase);
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+      .catch(error => {
+        throw new Error(error)
+      })
   }
 
   doRegister(email, password) {
