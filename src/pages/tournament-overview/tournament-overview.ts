@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TournamentOverviewPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Tournament} from "../../model/tournament";
 
 @IonicPage()
 @Component({
@@ -17,15 +11,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class TournamentOverviewPage {
 
+  private tournaments: Array<Tournament> = [];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-      createTournamentFirstPage(){
-      this.navCtrl.push('CreateTournamentPage');
-    }
 
-    showTournaments() {
-      this.navCtrl.push('TournamentOverviewPage');
-    }
+  showTournamentFirstPage() {
+    this.navCtrl.push('CreateTournamentPage');
+  }
+
+  showTournaments() {
+    this.navCtrl.push('TournamentOverviewPage');
+  }
 
 }

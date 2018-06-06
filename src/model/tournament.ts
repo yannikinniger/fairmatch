@@ -10,4 +10,8 @@ export class Tournament {
       public description: string
   ) {}
 
+  createGamePlan() {
+
+  }
+
 }
