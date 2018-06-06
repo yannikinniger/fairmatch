@@ -16,22 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 export class TournamentOverviewPage {
-  private tournaments: 0;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-      createTournament(){
+      createTournamentFirstPage(){
       this.navCtrl.push('CreateTournamentPage');
-      this.tournaments++;
     }
 
-    showTournaments(){
-      if (this.tournaments !== 0) {
-        alert("updateOverviewPage");
-      } else {
-        this.navCtrl.push('TournamentOverviewPage');
-      }
-  }
+    showTournaments() {
+      this.navCtrl.push('TournamentOverviewPage');
+    }
 
 }

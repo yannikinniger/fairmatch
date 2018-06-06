@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 import {Tournament} from "../../model/tournament";
-import {TournamentProvider} from "../../providers/tournament/tournament";
 
 @IonicPage()
 @Component({
@@ -11,9 +10,11 @@ import {TournamentProvider} from "../../providers/tournament/tournament";
 export class CreateTournamentPage {
 
   tournament: Tournament;
+  nextStepButton: string;
 
   constructor(public navCtrl: NavController) {
     this.tournament = new Tournament("", "");
+    this.nextStepButton = "Nächster Schritt";
   }
 
   saveTournament() {

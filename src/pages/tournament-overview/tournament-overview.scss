@@ -25,6 +25,9 @@ page-tournament-overview {
     margin-left: 3px;
     color: map_get($colors, font);
   }
+  #add-button{
+    height: 64px;
+  }
 
   #soccer-img{
     display: block;

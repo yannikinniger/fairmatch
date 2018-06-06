@@ -13,13 +13,13 @@
     </div>
     <input-field name="Turniername" placeholder="Schreibe hier dein Tourniername"
                  [(model)]="tournament.name"></input-field>
-    <input-field name="Turniername" placeholder="Schreibe hier dein Tourniername"
+    <input-field name="Turnierbeschreibung" placeholder="Beschreibe hier dein Tournier"
                  [(model)]="tournament.description"></input-field>
 </ion-content>
 
-<ion-footer id="footer" no-shadow no-border no-lines>
-  <ion-toolbar id="toolbar" position="bottom">
-    <button id="next-step-button" (click)="saveTournament()" ion-button full>Nächster Schritt</button>
-  </ion-toolbar>
-</ion-footer>
+
+<bottom-button (click)="saveTournament()" text="{{nextStepButton}}">
+  <ion-item no-lines id="message"></ion-item>
+</bottom-button>
+
 
