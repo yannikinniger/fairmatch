@@ -10,11 +10,9 @@ import {Tournament} from "../../model/tournament";
 export class CreateTournamentPage {
 
   tournament: Tournament;
-  nextStepButton: string;
 
   constructor(public navCtrl: NavController) {
     this.tournament = new Tournament("", "");
-    this.nextStepButton = "Nächster Schritt";
   }
 
   saveTournament() {
