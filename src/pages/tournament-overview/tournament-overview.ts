@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Tournament} from "../../model/tournament";
+import {TournamentProvider} from "../../providers/tournament/tournament";
 
 @IonicPage()
 @Component({
@@ -14,7 +15,11 @@ export class TournamentOverviewPage {
   private tournaments: Array<Tournament> = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    private tournamentProvider: TournamentProvider,
+  ) {
+    this.tournaments = tournamentProvider.getTournaments();
   }
 
   showTournamentFirstPage() {

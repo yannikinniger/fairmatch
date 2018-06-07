@@ -1,37 +1,66 @@
 @import "../../theme/variables";
+
 page-tournament-overview {
-  p{
+
+  p {
     font-size: 16px;
     color: map_get($colors, font);
   }
 
-  h1{
+  h1 {
     color: map_get($colors, font);
   }
 
   #textParagraph {
     text-align: center;
   }
-  #text-button-tournament{
+
+  #text-button-tournament {
     font-size: 16px;
-    font-weight:normal;
+    font-weight: normal;
     margin-left: 3px;
     color: map_get($colors, black);
   }
 
-  #text-button-profile{
+  #text-button-profile {
     font-size: 16px;
-    font-weight:normal;
+    font-weight: normal;
     margin-left: 3px;
     color: map_get($colors, font);
   }
-  #add-button{
+
+  #add-button {
     height: 64px;
   }
 
-  #soccer-img{
+  #soccer-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
+
+  .tournament {
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0px 6px 18px 0px rgba(142.8, 163.2, 183.6, 0.5);
+    background-color: white;
+    color: map_get($colors, font);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 8px 0;
+    }
+
+    button {
+      background-color: map_get($colors, button-secondary);
+      border-radius: 20px;
+      height: 42px;
+      font-size: 14px;
+      color: white;
+      width: 30%;
+      align-self: end;
+    }
+  }
+
 }

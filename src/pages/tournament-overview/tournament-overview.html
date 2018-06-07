@@ -1,21 +1,27 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-searchbar placeholder="Meine Tourniere"></ion-searchbar>
+  <ion-navbar hideBackButton="true">
+    <ion-title>Fair-Match</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-  <div id="pictureSoccer">
-    <img id="soccer-img" src="assets/imgs/Soccer.svg"/>
+  <div *ngIf="tournaments.length === 0; else tournamentsDisplay">
+    <div id="pictureSoccer">
+      <img id="soccer-img" src="assets/imgs/Soccer.svg"/>
+    </div>
+    <div id="textParagraph">
+      <h1>Noch keine Turniere?</h1>
+      <p>Erstelle dein erstes Turnier und lade dazu deine Freunde ein. </p>
+    </div>
   </div>
-  <div id="textParagraph">
-    <h1>Noch keine Turniere?</h1>
-    <p>Erstelle dein erstes Turnier und lade dazu deine Freunde ein. </p>
-  </div>
-
+  <ng-template #tournamentsDisplay>
+    <div class="tournament" *ngFor="let tournament of tournaments">
+      <h4>{{tournament.name}}</h4>
+      <p>{{tournament.description}}</p>
+      <button>Ansehen</button>
+    </div>
+  </ng-template>
 </ion-content>
 
 <ion-footer id="footer" >

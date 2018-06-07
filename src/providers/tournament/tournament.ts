@@ -12,12 +12,12 @@ import * as firebase from "firebase";
 export class TournamentProvider {
 
   tournaments: AngularFirestoreCollection<Tournament>;
-  userTournaments: AngularFirestoreDocument;
+  userTournaments: AngularFirestoreCollection<Tournament>;
 
   constructor(private db: AngularFirestore) {
     if (firebase.auth().currentUser !== null) {
       this.tournaments = this.db.collection<Tournament>('tournaments');
-      this.userTournaments = this.db.collection('users').doc(firebase.auth().currentUser.uid);
+      this.userTournaments = this.db.collection(`/users/${firebase.auth().currentUser.uid}/tournaments`);
     } else {
       throw new Error('user not logged in');
     }
@@ -27,17 +27,22 @@ export class TournamentProvider {
     tournament.id = this.db.createId();
     const tournamentObject = JSON.parse(JSON.stringify(tournament));
     return new Promise<DocumentReference>((resolve, reject) => {
-      this.tournaments.add(tournamentObject)
+      this.userTournaments.add(tournamentObject)
         .then(documentRef => {
-          this.userTournaments.collection<object>('tournaments').add({path: documentRef.path})
-            .catch(err => console.log(err));
           resolve(documentRef);
         }, err => reject(err))
+        .then(_ => this.tournaments.add(tournamentObject))
     });
   }
 
-  getTournaments() {
-    const uid = firebase.auth().currentUser.uid;
+  getTournaments(): Array<Tournament>{
+    const tournaments = [];
+    this.userTournaments.ref.get().then(snapshot =>
+      snapshot.forEach(doc => {
+        tournaments.push(doc.data());
+        console.log(doc.data());
+      })
+    );
+    return tournaments;
   }
-
 }
