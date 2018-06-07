@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {TournamentProvider} from "../../providers/tournament/tournament";
 import {Tournament} from "../../model/tournament";
 import {Player} from "../../model/player";
+import * as PlayerModel from "../../model/player";
 
 @IonicPage()
 @Component({
@@ -17,6 +18,8 @@ export class TournamentPlayerPage {
   positions: any;
   experiences: any;
   startTournamentButton: string;
+  private Positions = PlayerModel.Positions;
+  private ExperienceArray = PlayerModel.ExperienceArray;
 
 
   constructor(public navCtrl: NavController,
@@ -29,21 +32,22 @@ export class TournamentPlayerPage {
   savePlayer() {
     this.showPlayer = !this.showPlayer;
     this.tournament.participants.push(new Player(this.playerName, this.positions, this.experiences));
-    const errorOutput = document.getElementById('message');
-    this.tournamentProvider.createTournament(this.tournament)
-      .then(_ => {
-        errorOutput.innerText = "";
-        this.navCtrl.push('TournamentPlayerPage');
-      })
-      .catch(err => {
-        document.getElementById('message').innerText = err.message;
-      });
-
+    console.log(this.tournament);
   }
 
   addPlayerFunction() {
     this.showPlayer = !this.showPlayer;
   }
 
+  startTournament() {
+    // if tournament.participants > 4
+    this.tournamentProvider.createTournament(this.tournament)
+      .then(_ => {
+        this.navCtrl.push('TournamentPlayerPage');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
 }

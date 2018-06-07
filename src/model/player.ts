@@ -6,13 +6,6 @@ export class Player {
   ) {}
 }
 
-export const PositionEnum = {
-  '0': 'Verteidiger',
-  '1': 'Stürmer'
-};
+export const Positions = ['Verteidiger', 'Stürmer'];
 
-export const ExperienceEnum = {
-  '0': 'wenig',
-  '1': 'mittel',
-  '2': 'viel'
-};
+export const ExperienceArray = ['wenig', 'viel', 'mittel'];

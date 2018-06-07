@@ -6,15 +6,13 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <div *ngIf="showPlayer; else addPlayer">
     <div id="show-player-block">
       <ion-list-header>
         Erfasste spieler
       </ion-list-header>
-      <ion-item>
-      </ion-item>
+      <ion-item *ngFor="let player of tournament.participants">{{player.name}}</ion-item>
     </div>
     <div id="add-player-button-block">
       <button ion-button id="add-player-button" (click)="addPlayerFunction()"><img src="assets/imgs/Plus_Button.svg"/>
@@ -33,28 +31,27 @@
         <ion-item>
           <ion-label >Position</ion-label>
           <ion-select [(ngModel)]="positions" multiple="true">
-            <ion-option value="front">Vorne</ion-option>
-            <ion-option value="back">Hinten</ion-option>
+            <ion-option *ngFor="let position of Positions" value="{{Positions.indexOf(position)}}">
+              {{position}}
+            </ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
       <ion-list>
         <ion-item>
           <ion-label >Erfahrung</ion-label>
-          <ion-select [(ngModel)]="experiences" multiple="true">
-            <ion-option value="low">Wenig</ion-option>
-            <ion-option value="middle">Mittel</ion-option>
-            <ion-option value="high">Hoch</ion-option>
+          <ion-select [(ngModel)]="experiences">
+            <ion-option *ngFor="let position of ExperienceArray" value="{{ExperienceArray.indexOf(position)}}">
+              {{position}}
+            </ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
-      <button id="save-player-button" (click)="savePlayer()" ion-button full >Spieler speichern</button>
+      <button id="save-player-button" (click)="savePlayer()" ion-button full>Spieler speichern</button>
     </div>
   </ng-template>
 </ion-content>
 
-<bottom-button (click)="startTournament()"  text="{{startTournamentButton}}">
-  <ion-item no-lines id="message"></ion-item>
-</bottom-button>
+<bottom-button (click)="startTournament()" text="{{startTournamentButton}}"></bottom-button>
 
 
