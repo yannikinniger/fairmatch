@@ -1,7 +1,7 @@
 <ion-footer id="footer" no-shadow no-border no-lines>
   <ng-content></ng-content>
   <ion-toolbar class="toolbar" position="bottom">
-    <div class="content">
+    <div [ngClass]="{'disabled': disabled}" class="content">
       <label>{{text}}</label>
     </div>
   </ion-toolbar>

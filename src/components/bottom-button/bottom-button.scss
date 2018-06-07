@@ -21,4 +21,12 @@ bottom-button {
     height: 64px;
   }
 
+  p {
+    padding: 0 16px;
+  }
+
+  .disabled {
+    opacity: 0.5;
+  }
+
 }

@@ -13,7 +13,14 @@ import {Component, Input} from '@angular/core';
 export class BottomButtonComponent {
 
   @Input() text: string;
+  @Input() disabled: boolean = false;
 
   constructor() {}
+
+  getButtonStyle() {
+    return {
+      'opacity': this.disabled ? 0.5 : 1
+    }
+  }
 
 }
