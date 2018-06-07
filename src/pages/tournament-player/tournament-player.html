@@ -1,57 +1,46 @@
-
 <ion-header>
-
   <ion-navbar>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
   <div *ngIf="showPlayer; else addPlayer">
-    <div id="show-player-block">
-      <ion-list-header>
-        Erfasste spieler
-      </ion-list-header>
-      <ion-item *ngFor="let player of tournament.participants">{{player.name}}</ion-item>
+    <div>
+      <h1>Erfasste Spieler</h1>
+      <ion-item class="player" *ngFor="let player of tournament.participants">{{player.name}}</ion-item>
     </div>
-    <div id="add-player-button-block">
-      <button ion-button id="add-player-button" (click)="addPlayerFunction()"><img src="assets/imgs/Plus_Button.svg"/>
-      </button>
+    <div id="add-player">
+      <button id="add-player-button" (click)="addPlayerFunction()">Spieler hinzufügen</button>
     </div>
+    <bottom-button (click)="startTournament()" text="Turnier starten"
+                   [disabled]="this.tournament.participants.length < 4">
+      <p [hidden]="this.tournament.participants.length >= 4">
+        Es müssen mindestens 4 Spieler eingegeben werden um das Turnier zu starten
+      </p>
+    </bottom-button>
   </div>
   <ng-template #addPlayer>
-    <div>
-      <div id="description">
-        <h1>Erstelle ein Turnier </h1>
-        <p>Lade die Tournierteilnehmer ein und bestimme ihre Fähigkeiten. </p>
+      <div id="close-button-section">
+        <ion-icon id="close-button" name="close" (click)="showPlayer = true"></ion-icon>
+      </div>
+      <div>
+        <h1>Spieler hinzufügen</h1>
+        <p>Füge die Tournierteilnehmer hinzu und bestimme ihre Fähigkeiten.</p>
       </div>
       <p>Freunde hinzufügen</p>
-      <ion-input [(ngModel)]="playerName" type="text" placeholder="Schreibe einen Namen"></ion-input>
-      <ion-list>
-        <ion-item>
-          <ion-label >Position</ion-label>
-          <ion-select [(ngModel)]="positions" multiple="true">
-            <ion-option *ngFor="let position of Positions" value="{{Positions.indexOf(position)}}">
-              {{position}}
-            </ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-          <ion-label >Erfahrung</ion-label>
-          <ion-select [(ngModel)]="experiences">
-            <ion-option *ngFor="let position of ExperienceArray" value="{{ExperienceArray.indexOf(position)}}">
-              {{position}}
-            </ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <button id="save-player-button" (click)="savePlayer()" ion-button full>Spieler speichern</button>
-    </div>
+      <input-field name="Name" [(model)]="currentPlayer.name" type="text"
+                   placeholder="Schreibe einen Namen"></input-field>
+      <ion-item no-lines id="experience-select">
+        <ion-label>Erfahrung</ion-label>
+        <ion-select [(ngModel)]="currentPlayer.experience">
+          <ion-option *ngFor="let position of ExperienceArray" value="{{ExperienceArray.indexOf(position)}}">
+            {{position}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <bottom-button (click)="savePlayer()" text="Spieler hinzufügen"></bottom-button>
+
   </ng-template>
 </ion-content>
-
-<bottom-button (click)="startTournament()" text="{{startTournamentButton}}"></bottom-button>
 
 

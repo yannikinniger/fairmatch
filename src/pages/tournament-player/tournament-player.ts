@@ -13,26 +13,22 @@ import * as PlayerModel from "../../model/player";
 export class TournamentPlayerPage {
 
   private tournament: Tournament;
-  showPlayer: boolean = true;
-  playerName: string;
-  positions: any;
-  experiences: any;
-  startTournamentButton: string;
-  private Positions = PlayerModel.Positions;
-  private ExperienceArray = PlayerModel.ExperienceArray;
+  private currentPlayer: Player = new Player();
+  showPlayer: boolean = false;
+  ExperienceArray = PlayerModel.ExperienceArray;
 
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private tournamentProvider: TournamentProvider) {
     this.tournament = navParams.get('tournament');
-    this.startTournamentButton = "Tournier starten";
+    console.log(this.currentPlayer);
   }
 
   savePlayer() {
     this.showPlayer = !this.showPlayer;
-    this.tournament.participants.push(new Player(this.playerName, this.positions, this.experiences));
-    console.log(this.tournament);
+    this.tournament.participants.push(this.currentPlayer);
+    this.currentPlayer = new Player();
   }
 
   addPlayerFunction() {
@@ -40,14 +36,16 @@ export class TournamentPlayerPage {
   }
 
   startTournament() {
-    // if tournament.participants > 4
-    this.tournamentProvider.createTournament(this.tournament)
-      .then(_ => {
-        this.navCtrl.push('TournamentPlayerPage');
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    if (this.tournament.participants.length <= 4) {
+      this.tournament.createTeams();
+      this.tournamentProvider.createTournament(this.tournament)
+        .then(_ => {
+          this.navCtrl.push('TournamentPlayerPage');
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 
 }

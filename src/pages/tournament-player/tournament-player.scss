@@ -1,37 +1,61 @@
 page-tournament-player {
-    @import "../../theme/variables";
+  @import "../../theme/variables";
 
-    p {
-      font-size: 16px;
-      color: map_get($colors, font);
-    }
-
-    input {
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 1);
-      box-shadow: 0px 6px 18px 0px rgba(142.8, 163.2, 183.6, 0.5);
-      background-color: white;
-      color: map_get($colors, font);
-      padding: 1em 32px;
-      width: 100%;
-    }
-
-    a {
-      position: absolute;
-      right: 0;
-      padding-right: 16px;
-      text-decoration: none;
-    }
-
-    #login-button {
-      margin: 0;
-      height: 3em;
-      width: 100%;
-    }
-    #toolbar {
-      background-color: transparent;
-    }
-
+  p {
+    font-size: 16px;
+    color: map_get($colors, font);
   }
+
+  #close-button {
+    font-size: 28pt;
+    float: right;
+    color: map_get($colors, primary);
+  }
+
+  #experience-select {
+    margin: 30px 0;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 18px 0 rgba(142.8, 163.2, 183.6, 0.5);
+    background-color: white;
+    color: map_get($colors, font);
+    padding: 4px 32px;
+    width: 100%;
+    height: 56px;
+    font-size: 14pt;
+
+    ion-label {
+      margin: 0;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      font-weight: lighter;
+    }
+  }
+
+  #add-player-button {
+    border-radius: 30px;
+    height: 42px;
+    background-color: map_get($colors, button-secondary);
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #add-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  .player {
+    font-weight: lighter;
+    color: map_get($colors, font);
+  }
+
+  #close-button-section {
+    height: 48px;
+  }
+
+}
 
 
