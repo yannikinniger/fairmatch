@@ -13,7 +13,7 @@ export class Tournament {
       public description: string
   ) {}
 
-  createTeams() {
+  public createTeams() {
     if (this.participants.length % this.teamSize != 0 ) {
       throw new Error('uneven team size');
     }
