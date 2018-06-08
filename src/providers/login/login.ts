@@ -10,7 +10,7 @@ export class LoginProvider {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
       .catch(error => {
         throw new Error(error)
-      })
+      });
   }
 
   doRegister(email, password) {
