@@ -30,4 +30,8 @@ export class TournamentOverviewPage {
     this.navCtrl.push('TournamentOverviewPage');
   }
 
+  showProfile() {
+    this.navCtrl.push('ProfileDetailsPage');
+  }
+
 }
