@@ -20,7 +20,11 @@ export class TournamentOverviewPage {
   ionViewDidEnter() {
     this.tournamentProvider.getTournaments()
       .then(tournaments => {
-        this.tournaments = tournaments;
+        const size = tournaments.length;
+        while (this.tournaments.length !== size) {
+          console.log(this.tournaments);
+          this.tournaments.push(tournaments.pop());
+        }
       });
   }
 

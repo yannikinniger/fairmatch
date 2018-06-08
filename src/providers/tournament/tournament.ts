@@ -36,14 +36,15 @@ export class TournamentProvider {
 
   getTournaments(): Promise<Array<Tournament>> {
     const tournaments = [];
-    return new Promise((resolve, reject) => {
-      this.userTournaments.ref.get().then(snapshot =>
-        snapshot.forEach(doc => {
-          tournaments.push(doc.data());
-        })
+    return new Promise<Array<Tournament>>((resolve, reject) => {
+      this.userTournaments.ref.get().then(snapshot => {
+          snapshot.forEach(doc => {
+            tournaments.push(doc.data());
+          });
+          resolve(tournaments);
+          reject(null);
+        }
       );
-      resolve(tournaments);
-      reject(null);
     })
   }
 }
