@@ -5,7 +5,6 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
 
 import {MyApp} from './app.component';
-import {HomePage} from '../pages/home/home';
 import {SignUpPage} from "../pages/sign-up/sign-up";
 
 import {LoginProvider} from '../providers/login/login';
@@ -13,13 +12,12 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {environment} from '../environments/environment';
-import { TournamentProvider } from '../providers/tournament/tournament';
+import {TournamentProvider} from '../providers/tournament/tournament';
+import {SignUpPageModule} from "../pages/sign-up/sign-up.module";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    SignUpPage,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +25,7 @@ import { TournamentProvider } from '../providers/tournament/tournament';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
+    SignUpPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

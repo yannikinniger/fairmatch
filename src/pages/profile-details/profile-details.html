@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar hideBackButton="false">
+  <ion-navbar>
     <ion-title>Profil</ion-title>
   </ion-navbar>
 </ion-header>
@@ -8,7 +8,8 @@
 <ion-content padding>
     <div id="profile-info">
       <h1>Userdetails</h1>
-     <!-- <ion-item class="userEmail">{{email}}</ion-item>-->
+      {{email}}
+      <button (click)="signOut()">Logout</button>
     </div>
 </ion-content>
 
