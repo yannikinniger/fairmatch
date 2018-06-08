@@ -1,6 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {LoginProvider} from "../../providers/login/login";
+import {ProfileDetailsPage} from "../profile-details/profile-details";
 
 @IonicPage()
 @Component({
@@ -12,14 +13,16 @@ export class SignUpEmailPage {
   @ViewChild('passwordReset') passwordResetOverlay: ElementRef;
 
   password: string;
-  email: string;
+    email: string;
   doSignUp: boolean;
   buttonText: string;
+
+
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private loginProvider: LoginProvider
+    private loginProvider: LoginProvider,
   ) {
     this.doSignUp = navParams.get('signUp');
     this.buttonText = this.doSignUp ? "Account erstellen" : "Login";
@@ -65,5 +68,4 @@ export class SignUpEmailPage {
   triggerPasswordReset() {
     this.loginProvider.passwordReset(this.email).then()
   }
-
 }
