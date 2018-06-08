@@ -28,14 +28,10 @@ export class Tournament {
   }
 
   public createSchedule() {
-    let teamsCopy = this.teams;
-    function getRandomTeam(): Team {
-      const randomIndex = Tournament.getRandomArbitrary(0, teamsCopy.length);
-      return teamsCopy.splice(randomIndex, 1)[0];
-    }
-    while (teamsCopy.length > 0) {
-      console.log('game');
-      this.games.push(new Game(getRandomTeam(), getRandomTeam()))
+    for (let i = 0; i < this.teams.length; ++i) {
+      let opponents = this.teams.slice();
+      const currentTeam = opponents.splice(i, 1)[0];
+      opponents.forEach(opponent => this.games.push(new Game(currentTeam, opponent)));
     }
   }
 
