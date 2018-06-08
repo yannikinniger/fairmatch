@@ -21,7 +21,8 @@ export class ProfileDetailsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.email=this.provider.email;
+   // this.provider = new SignUpEmailPage(this.navCtrl, this.navParams, LoginProivder loginProvider);
+   // this.email=this.provider.email;
   }
 
   ionViewDidLoad() {
