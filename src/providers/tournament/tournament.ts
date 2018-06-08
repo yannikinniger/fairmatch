@@ -41,6 +41,7 @@ export class TournamentProvider {
           snapshot.forEach(doc => {
             tournaments.push(doc.data());
           });
+          tournaments.sort((a, b) => a.timestamp - b.timestamp);
           resolve(tournaments);
           reject(null);
         }

@@ -1,6 +1,8 @@
 import {Player} from "./player";
 import {Team} from "./team";
 import {Game} from "./game";
+import * as firebase from "firebase";
+import Timestamp = firebase.firestore.Timestamp;
 
 export class Tournament {
 
@@ -8,11 +10,14 @@ export class Tournament {
   teams: Array<Team> = [];
   teamSize = 2;
   games: Array<Game> = [];
+  timestamp: Timestamp;
 
   constructor(
       public name: string,
       public description: string
-  ) {}
+  ) {
+    this.timestamp = Timestamp.now()
+  }
 
   public createTeams(participants: Array<Player>) {
     if (participants.length % this.teamSize != 0 ) {

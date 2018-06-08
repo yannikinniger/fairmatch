@@ -23,7 +23,7 @@ export class TournamentOverviewPage {
         const size = tournaments.length;
         while (this.tournaments.length !== size) {
           console.log(this.tournaments);
-          this.tournaments.push(tournaments.pop());
+          this.tournaments.unshift(tournaments.pop());
         }
       });
   }
@@ -31,7 +31,6 @@ export class TournamentOverviewPage {
   showTournamentDetails(id: string) {
     const tournament = this.tournaments.find(tournament => tournament.id == id);
     this.navCtrl.push('TournamentDetailPage', {tournament: tournament});
-    console.log(tournament);
   }
 
   showTournamentFirstPage() {
