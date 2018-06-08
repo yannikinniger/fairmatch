@@ -42,7 +42,7 @@ export class TournamentPlayerPage {
       this.tournament.createSchedule();
       this.tournamentProvider.createTournament(this.tournament)
         .then(_ => {
-          this.navCtrl.push('TournamentPlayerPage');
+          this.navCtrl.push('TournamentOverviewPage');
         })
         .catch(err => {
           console.log(err);
