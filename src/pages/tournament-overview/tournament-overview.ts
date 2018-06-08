@@ -8,18 +8,18 @@ import {TournamentProvider} from "../../providers/tournament/tournament";
   selector: 'page-tournament-overview',
   templateUrl: 'tournament-overview.html',
 })
-
-
 export class TournamentOverviewPage {
 
-  private tournaments: Array<Tournament> = [];
-
+  tournaments: Array<Tournament> = [];
 
   constructor(
     public navCtrl: NavController,
-    private tournamentProvider: TournamentProvider,
+    tournamentProvider: TournamentProvider,
   ) {
-    this.tournaments = tournamentProvider.getTournaments();
+    tournamentProvider.getTournaments()
+      .then(tournaments => {
+        this.tournaments = tournaments;
+      });
   }
 
   showTournamentFirstPage() {
