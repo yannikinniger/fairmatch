@@ -8,9 +8,5 @@ export class Game {
     public teamB: Team,
   ) {}
 
-  private result = (scoreTeamA, scoreTeamB) => {
-
-  }
-
 }
 

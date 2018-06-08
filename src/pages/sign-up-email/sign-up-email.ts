@@ -1,7 +1,6 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {LoginProvider} from "../../providers/login/login";
-import {ProfileDetailsPage} from "../profile-details/profile-details";
 
 @IonicPage()
 @Component({
