@@ -20,6 +20,9 @@ export class TournamentDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.tournament = navParams.get('tournament');
+    if (this.tournament === undefined) {
+      navCtrl.push('TournamentOverviewPage')
+    }
   }
 
 

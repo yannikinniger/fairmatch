@@ -9,13 +9,13 @@
   <h1>Nächste Spiele</h1>
   <div class="game" *ngFor="let game of tournament.games">
     <div class="team-display">
-      <section>
+      <section class="players">
         <p *ngFor="let player of game.teamA.players">{{player.name}}</p>
       </section>
       <section>
         <h3>VS</h3>
       </section>
-      <section>
+      <section class="players">
         <p *ngFor="let player of game.teamB.players">{{player.name}}</p>
       </section>
     </div>
