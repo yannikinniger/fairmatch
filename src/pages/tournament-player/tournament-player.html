@@ -13,8 +13,8 @@
       <button id="add-player-button" (click)="addPlayerFunction()">Spieler hinzufügen</button>
     </div>
     <bottom-button (click)="startTournament()" text="Turnier starten"
-                   [disabled]="this.participants.length < 4">
-      <p [hidden]="this.participants.length >= 4">
+                   [disabled]="this.participants.length%4!==0">
+      <p [hidden]="this.participants.length%4!==0">
         Es müssen mindestens 4 Spieler eingegeben werden um das Turnier zu starten
       </p>
     </bottom-button>
