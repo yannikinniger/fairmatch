@@ -23,7 +23,9 @@ export class TournamentPlayerPage {
               public navParams: NavParams,
               private tournamentProvider: TournamentProvider) {
     this.tournament = navParams.get('tournament');
-    console.log(this.currentPlayer);
+    if (this.tournament === undefined) {
+      navCtrl.push('CreateTournamentPage')
+    }
   }
 
   savePlayer() {
@@ -37,7 +39,7 @@ export class TournamentPlayerPage {
   }
 
   startTournament() {
-    if (this.participants.length >= 4) {
+    if (this.participants.length >= 4 && this.participants.length % 2 === 0) {
       this.tournament.createTeams(this.participants);
       this.tournament.createSchedule();
       this.tournamentProvider.createTournament(this.tournament)

@@ -6,6 +6,10 @@ page-tournament-player {
     color: map_get($colors, font);
   }
 
+  h1 {
+    margin-bottom: 28px;
+  }
+
   #close-button {
     font-size: 28pt;
     float: right;
@@ -50,6 +54,7 @@ page-tournament-player {
   .player {
     font-weight: lighter;
     color: map_get($colors, font);
+    margin: 16px 0;
   }
 
   #close-button-section {
