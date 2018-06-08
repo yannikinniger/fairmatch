@@ -1,0 +1,32 @@
+@import "../../theme/variables";
+
+page-tournament-detail {
+
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  .game {
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 18px 0 rgba(142.8, 163.2, 183.6, 0.5);
+    background-color: white;
+    color: map_get($colors, font);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+    .team-display {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      h3 {
+        color: map_get($colors, primary);
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  }
+
+}
