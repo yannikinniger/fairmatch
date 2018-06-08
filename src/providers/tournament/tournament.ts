@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-  AngularFirestoreDocument,
   DocumentReference
 } from 'angularfire2/firestore';
 import {Tournament} from "../../model/tournament";
@@ -35,14 +34,16 @@ export class TournamentProvider {
     });
   }
 
-  getTournaments(): Array<Tournament>{
+  getTournaments(): Promise<Array<Tournament>> {
     const tournaments = [];
-    this.userTournaments.ref.get().then(snapshot =>
-      snapshot.forEach(doc => {
-        tournaments.push(doc.data());
-        console.log(doc.data());
-      })
-    );
-    return tournaments;
+    return new Promise((resolve, reject) => {
+      this.userTournaments.ref.get().then(snapshot =>
+        snapshot.forEach(doc => {
+          tournaments.push(doc.data());
+        })
+      );
+      resolve(tournaments);
+      reject(null);
+    })
   }
 }
