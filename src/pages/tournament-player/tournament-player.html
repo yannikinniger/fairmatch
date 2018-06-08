@@ -7,14 +7,14 @@
   <div *ngIf="showPlayer; else addPlayer">
     <div>
       <h1>Erfasste Spieler</h1>
-      <ion-item class="player" *ngFor="let player of tournament.participants">{{player.name}}</ion-item>
+      <ion-item class="player" *ngFor="let player of participants">{{player.name}}</ion-item>
     </div>
     <div id="add-player">
       <button id="add-player-button" (click)="addPlayerFunction()">Spieler hinzufügen</button>
     </div>
     <bottom-button (click)="startTournament()" text="Turnier starten"
-                   [disabled]="this.tournament.participants.length < 4">
-      <p [hidden]="this.tournament.participants.length >= 4">
+                   [disabled]="this.participants.length < 4">
+      <p [hidden]="this.participants.length >= 4">
         Es müssen mindestens 4 Spieler eingegeben werden um das Turnier zu starten
       </p>
     </bottom-button>

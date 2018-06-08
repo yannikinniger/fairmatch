@@ -14,6 +14,7 @@ export class TournamentPlayerPage {
 
   private tournament: Tournament;
   private currentPlayer: Player = new Player();
+  participants: Array<Player> = [];
   showPlayer: boolean = false;
   ExperienceArray = PlayerModel.ExperienceArray;
 
@@ -27,7 +28,7 @@ export class TournamentPlayerPage {
 
   savePlayer() {
     this.showPlayer = !this.showPlayer;
-    this.tournament.participants.push(this.currentPlayer);
+    this.participants.push(this.currentPlayer);
     this.currentPlayer = new Player();
   }
 
@@ -36,8 +37,9 @@ export class TournamentPlayerPage {
   }
 
   startTournament() {
-    if (this.tournament.participants.length <= 4) {
-      this.tournament.createTeams();
+    if (this.participants.length >= 4) {
+      this.tournament.createTeams(this.participants);
+      this.tournament.createSchedule();
       this.tournamentProvider.createTournament(this.tournament)
         .then(_ => {
           this.navCtrl.push('TournamentPlayerPage');
