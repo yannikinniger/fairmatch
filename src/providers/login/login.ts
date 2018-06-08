@@ -8,9 +8,7 @@ export class LoginProvider {
   constructor() {
     firebase.initializeApp(environment.firebase);
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-      .catch(error => {
-        throw new Error(error)
-      });
+      .catch(err => console.log(err));
   }
 
   doRegister(email, password) {
@@ -18,7 +16,7 @@ export class LoginProvider {
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(res => {
           resolve(res);
-        }, err => reject(err))
+        }).catch(err => reject(err))
     })
   }
 
@@ -27,7 +25,7 @@ export class LoginProvider {
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then(res => {
           resolve(res);
-        }, err => reject(err))
+        }).catch(err => reject(err))
     })
   }
 
@@ -36,7 +34,7 @@ export class LoginProvider {
       firebase.auth().sendPasswordResetEmail(email)
         .then(res => {
           resolve(res);
-        }, err => reject(err))
+        }).catch(err => reject(err))
     })
   }
 

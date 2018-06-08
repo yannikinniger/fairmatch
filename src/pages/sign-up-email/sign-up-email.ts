@@ -64,7 +64,4 @@ export class SignUpEmailPage {
     console.log(this.passwordResetOverlay.nativeElement.style);
   }
 
-  triggerPasswordReset() {
-    this.loginProvider.passwordReset(this.email).then()
-  }
 }

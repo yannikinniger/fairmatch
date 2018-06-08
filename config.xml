@@ -38,7 +38,7 @@
         <splash density="port-hdpi" src="resources/soccer_splash.svg" />
         <splash density="port-xhdpi" src="resources/soccer_splash.svg" />
         <splash density="port-xxhdpi" src="resources/soccer_splash.svg" />
-        <splash density="port-xxxhdpi" src="resources/soccer_splash.gif" />
+        <splash density="port-xxxhdpi" src="resources/soccer_splash.svg" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -76,10 +76,10 @@
         <splash height="480" src="resources/soccer_splash.svg" width="320" />
         <splash height="2732" src="resources/soccer_splash.svg" width="2732" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
-    <plugin name="cordova-plugin-device" spec="2.0.2" />
-    <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
-    <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
-    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <engine name="android" spec="~7.0.0" />
+    <engine name="android" spec="6.4.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.19" />
+    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
 </widget>

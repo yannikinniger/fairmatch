@@ -25,7 +25,7 @@ export class TournamentOverviewPage {
           console.log(this.tournaments);
           this.tournaments.unshift(tournaments.pop());
         }
-      });
+      }).catch(err => console.log(err));
   }
 
   showTournamentDetails(id: string) {

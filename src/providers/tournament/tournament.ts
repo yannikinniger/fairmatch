@@ -29,15 +29,17 @@ export class TournamentProvider {
       this.userTournaments.add(tournamentObject)
         .then(documentRef => {
           resolve(documentRef);
-        }, err => reject(err))
+        })
         .then(_ => this.tournaments.add(tournamentObject))
+        .catch(err => reject(err))
     });
   }
 
   getTournaments(): Promise<Array<Tournament>> {
     const tournaments = [];
     return new Promise<Array<Tournament>>((resolve, reject) => {
-      this.userTournaments.ref.get().then(snapshot => {
+      this.userTournaments.ref.get()
+        .then(snapshot => {
           snapshot.forEach(doc => {
             tournaments.push(doc.data());
           });
@@ -45,7 +47,7 @@ export class TournamentProvider {
           resolve(tournaments);
           reject(null);
         }
-      );
+      ).catch(err => reject(err));
     })
   }
 }

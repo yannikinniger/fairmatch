@@ -18,7 +18,7 @@ export class ProfileDetailsPage {
 
   signOut() {
     firebase.auth().signOut()
-      .then(_ => this.navCtrl.push('SignUpPage'));
+      .then(_ => this.navCtrl.push('SignUpPage')).catch();
   }
 
 }
