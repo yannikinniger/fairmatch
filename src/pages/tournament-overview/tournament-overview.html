@@ -19,7 +19,7 @@
     <div class="tournament" *ngFor="let tournament of tournaments">
       <h4>{{tournament.name}}</h4>
       <p>{{tournament.description}}</p>
-      <button>Ansehen</button>
+      <button (click)="showTournamentDetails(tournament.id)">Ansehen</button>
     </div>
   </ng-template>
 </ion-content>
